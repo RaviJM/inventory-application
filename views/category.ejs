@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Category</title>
+  </head>
+  <body>
+    <h1>Category - <%= categoryToShow.name %></h1>
+    <h2>Description - <%= categoryToShow.description %></h2>
+
+    <a href="/categories/update/<%= categoryToShow._id %>"
+      ><button>Update</button></a
+    >
+    <a href="/categories/delete/<%= categoryToShow._id %>"
+      ><button>Delete</button></a
+    >
+  </body>
+</html>

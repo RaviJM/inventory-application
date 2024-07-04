@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1>Categories</h1>
+    <a href="/categories/addCategory"><button>Add Category</button></a>
+
+    <% if (categoriesList.length) { %> <% for (let i = 0; i <
+    categoriesList.length; i++) { %>
+    <a href="<%= categoriesList[i].url %>"
+      ><p>
+        <%= categoriesList[i].name %> - <%= categoriesList[i].description %>
+      </p></a
+    >
+    <% } %> <% } else { %>
+    <p>No categories found.</p>
+    <% } %>
+  </body>
+</html>

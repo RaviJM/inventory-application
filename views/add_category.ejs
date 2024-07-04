@@ -1,0 +1,50 @@
+<!-- form is used for both create and update of category -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1><u>Category Form</u></h1>
+
+    <form method="post" action="/categories/addCategory">
+      <label for="name"> Name: </label>
+      <input
+        id="name"
+        name="name"
+        type="text"
+        value="<%- title == 'Update Category' ? categoryToUpdate.name : '' -%>"
+      />
+      <br />
+      <br />
+
+      <label for="description"> Description </label>
+      <input
+        id="description"
+        name="description"
+        type="textarea"
+        value="<%- title == 'Update Category' ? categoryToUpdate.description : '' -%>"
+      />
+
+      <input type="hidden" name="createOrUpdate" value="<%= title %>" />
+      <input
+        type="hidden"
+        name="categoryToUpdateId"
+        value="<%= categoryToUpdate._id %>"
+      />
+
+      <br />
+      <br />
+      <hr />
+
+      <% if (title === 'Update Category') {%>
+      <button type="submit">Update</button>
+
+      <% }else {%>
+      <button type="submit">Add</button>
+      <% } %>
+    </form>
+  </body>
+</html>
